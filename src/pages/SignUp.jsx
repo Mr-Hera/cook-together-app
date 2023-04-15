@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-const Signup = () => {
-    const [user, setUser] = useState(null);
+const Signup = ({ onSignUp }) => {
+    // const [user, setUser] = useState(null);
     const [username, setUserName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState('')
 
-    function handleLogin(user) {
-        setUser(user);
-    }
-
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         // fetch("https://emmerce-task-tracker-api-production.up.railway.app/register/", {
         //   method: "POST",
@@ -27,6 +23,7 @@ const Signup = () => {
         setUserName("");
         setEmail("");
         setPassword("");
+        onSignUp();
     }
   return (
     <>
@@ -37,7 +34,7 @@ const Signup = () => {
                         SIGN UP HERE...
                     </h4>
                 </div>
-                <form className="flex flex-col w-3/4 m-10 ">
+                <form onSubmit={handleSubmit} className="flex flex-col w-3/4 m-10 ">
                     <div className="relative border-0 p-3 placeholder:text-2xl placeholder-current mb-3 px-2">
                         <input
                             id="username"
@@ -74,13 +71,14 @@ const Signup = () => {
                         />
                         <label htmlFor="password" className="absolute text-2xl font-semibold text-opacity-80 left-0.5 -top-2 bg-black text-white p-0.5 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:font-normal mx-6 transition duration-200 input-text">Password</label>
                     </div>
+                    
                     <button
                         className="p-3 px-2 pt-2 text-white font-semibold md:bg-blue-800 md:w-full md:hover:bg-blue-700 sm:bg-blue-700"
                         type="submit"
-                        onClick={handleLogin}
                     >
                         SIGN UP
                     </button>
+
                     <div className="container mx-auto w-full m-5 p-3 border-spacing-4 bg-sky-500/5">
                         <p className="text-xl text-white text-center damn">
                         {" "}

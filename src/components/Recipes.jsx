@@ -2,16 +2,25 @@ import React from 'react'
 import Recipe from './Recipe'
 
 const Recipes = () => {
+    const recipes = [
+        "BBQ Recipes",
+        "Pastries",
+        "Vegan Recipes"
+    ];
+    
+    // const items = recipes.map(recipe => {
+    //     <Recipe key={recipe} value={recipe} />
+    // });
   return (
     <>
         <div className="flex flex-col justify-center my-4 p-8 w-3/4">
             <div className="flex flex-col justify-center align-center mx-auto w-3/4 p-8">
                 <div className="border-b w-3/4 m-10 p-4">
                     <h4 className="text-center text-white font-semibold text-4xl damn">
-                        RECIPES[TODO]
+                        RECIPES
                     </h4>
                 </div>
-                <div className="border-x-4 w-3/4 m-10 p-4">
+                <div className="border-x-4 w-3/4 m-10 p-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 md:hover:shadow-2xl duration-300 ...">
                     <h4 className="text-center text-white font-semibold text-4xl damn">
                         <Recipe />
                     </h4>
