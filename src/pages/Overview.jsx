@@ -8,7 +8,7 @@ const Overview = () => {
             {/* <h1 className="text-8xl text-white font-bold damn">
             TASK <br /> TRACKER
             </h1> */}
-            {/* <div className="flex flex-col w-full h-full bg-[url('src/assets/squares.jpeg')]"></div> */}
+            <div className="flex flex-col w-full h-full bg-[url('src/assets/images/cover-photo.jpg')]"></div>
         </div>
     </>
   )

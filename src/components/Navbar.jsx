@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ user, onLogout }) => {
     const handleLogout = () => {
-        // 
+        onLogout();
     };
 
   return (
@@ -58,12 +59,12 @@ const Navbar = ({ user, onLogout }) => {
                             <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">ABOUT</h1>
                         </div>
                     </Link> */}
-                    {/* { user ? (
+                    { user ? (
                         
                         <>
-                            <Link to="/tasks">
+                            <Link to="/recipes">
                                 <div className="flex-col relative">
-                                    <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">TASKS</h1>
+                                    <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">RECIPES</h1>
                                 </div>
                             </Link>
                             <Link onClick={handleLogout} >
@@ -74,7 +75,7 @@ const Navbar = ({ user, onLogout }) => {
                         </>
                     ) : (
                         <>
-                            <Link to="/register">
+                            <Link to="/signup">
                                 <div className="flex-col relative">
                                     <h1 className="flex align-center pl-4 py-1 text-white text-5xl damn hover:bg-white hover:font-bold hover:text-black hover:text:6xl">SIGNUP</h1>
                                 </div>
@@ -85,7 +86,7 @@ const Navbar = ({ user, onLogout }) => {
                                 </div>
                             </Link>
                         </>
-                    ) } */}
+                    ) }
                     
                 </div>
                 
