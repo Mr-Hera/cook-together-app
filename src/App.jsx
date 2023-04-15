@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import { Overview, Signup, Login } from './pages'
+import { Navbar, Recipes } from './components'
 import './App.css'
-import { Navbar } from './components'
 
 function App() {
   const [user, setUser] = useState(null);
 
   const handleLogin = (user) => {
-    setUser(user);
+    setUser(true);
     console.log(user);
   }
 
@@ -25,6 +25,7 @@ function App() {
           <Route path="/" element={ <Overview /> }></Route>
           <Route path="/signup" element={ <Signup /> }></Route>
           <Route path="/login" element={ <Login onLogin={handleLogin} /> }></Route>
+          <Route path="/recipes" element={ <Recipes /> }></Route>
         </Routes>
       </div>
     </>
