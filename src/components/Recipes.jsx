@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAdd } from '@fortawesome/free-solid-svg-icons'
 import Recipe from './Recipe'
+import NewRecipeModal from './NewRecipeModal'
 
 const Recipes = () => {
+    const [showAddRecipe, setShowAddRecipe] = useState(false);
+
+    const handleActivate = () => {
+        setShowAddRecipe(prevState => !prevState);
+    }
+
     const recipes = [
         "BBQ Recipes",
         "Pastries",
@@ -25,6 +34,16 @@ const Recipes = () => {
                         <Recipe />
                     </h4>
                 </div>
+            </div>
+            <div className="flex fixed justify-end bottom-0 right-8">
+                <FontAwesomeIcon
+                    className="peer mt-12 mb-8 transition ease-in-out delay-150 hover:cursor-pointer hover:-translate-y-1 hover:scale-110 md:hover:shadow-2xl duration-300 ..."
+                    style={{ fontSize: 80, color: "white" }}
+                    icon={faAdd}
+                    onClick={handleActivate}
+                />
+                <span className="hidden flex fixed text-white bottom-0 mb-8 mr-20  peer-hover:block"><i>Add Recipe!</i></span>
+                {showAddRecipe && (<NewRecipeModal onActivate={handleActivate} />)}
             </div>
         </div>
     </>

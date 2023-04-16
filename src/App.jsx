@@ -30,14 +30,14 @@ function App() {
     // console.log();
   }
 
-  // useEffect(()=> {
-    // if(!isAuthenticated) {
-    //   navigate("/");
-    // } 
-    // else {
-    //   navigate("/recipes");
-    // }
-  // }, [isAuthenticated])
+  useEffect(()=> {
+    if(!isAuthenticated) {
+      navigate("/");
+    } 
+    else {
+      navigate("/recipes");
+    }
+  }, [isAuthenticated])
   
 
   return (
